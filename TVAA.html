@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <title>Vehicles Tax</title>
+    <meta content="Admin Dashboard" name="description" />
+    <meta content="Mannatthemes" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <link rel="shortcut icon" href="images/ensajColors.png">
+
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/icons.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/css.css" rel="stylesheet" type="text/css">
+
+
+    <!-- DataTables -->
+    <link href="assets/plugins/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/plugins/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <!-- Responsive datatable examples -->
+    <link href="assets/plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <!-- jQuery  -->
+    <script src="assets/js/jquery.min.js"></script>
+    <!-- Required datatable js -->
+    <script src="assets/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="assets/plugins/datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/modernizr.min.js"></script>
+    <script src="assets/js/waves.js"></script>
+    <script src="assets/js/jquery.nicescroll.js"></script>
+    <!--JSPDF-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"
+        integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.0.4/jspdf.plugin.autotable.js"></script>
+
+    <!-- Sweet Alert -->
+    <link href="assets/plugins/sweet-alert2/sweetalert2.min.css" rel="stylesheet" type="text/css">
+
+    <!-- App js -->
+    <script src="assets/js/app.js"></script>
+
+    <script src="js/tva.js"></script>
+    <link rel="stylesheet" href="css/phonetopup.css" type="text/css" />
+
+    <script src="js/pdf/tvapdf.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+
+
+</head>
+
+
+<body>
+
+    <!-- Loader -->
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner"></div>
+        </div>
+    </div>
+
+    <!-- Navigation Bar-->
+    <header id="topnav">
+        <!-- MENU Start -->
+        <div class="navbar-custom">
+            <div class="container-fluid">
+                <div id="navigation">
+                    <!-- Navigation Menu-->
+                    <ul class="navigation-menu ">
+
+                        <li class="has-submenu ">
+                            <a href="dashboardAdmin"><i class="mdi mdi-view-dashboard"></i>Dashboard</a>
+                        </li>
+                        <li class="has-submenu">
+                            <a href="javascript:void(0)"><i class="mdi mdi-account"></i>Users</a>
+                            <ul class="submenu megamenu">
+
+                                <li>
+                                    <a class="dropdown-item" href="Users" ><i
+                                            class="mdi mdi-account-multiple m-r-5  "></i>User managment </a>
+                                </li><br>
+                                <li>
+                                    <a class="dropdown-item" href="pointing" ><i
+                                            class="mdi mdi-timetable m-r-5  "></i> Pointing managment</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="has-submenu">
+                            <a href="#"><i class="mdi mdi-airplane"></i>Airplane Ticket</a>
+                            <ul class="submenu megamenu">
+                                <li>
+                                    <ul>
+                                        <li><a href="BAA">Get a ticket</a></li>
+
+                                    </ul>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="has-submenu">
+                            <a href="#"><i class="mdi mdi-lightbulb"></i>Electricity</a>
+                            <ul class="submenu megamenu">
+                                <li>
+                                    <ul>
+                                        <li><a href="EA">Pay electricity bill</a></li>
+
+                                    </ul>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="has-submenu">
+                            <a href="#"><i class="mdi mdi-car"></i>Vehicle Taxs</a>
+                            <ul class="submenu megamenu">
+                                <li>
+                                    <ul>
+                                        <li><a href="TVAA">Pay a tax</a></li>
+
+                                    </ul>
+                                </li>
+
+                            </ul>
+                        </li>
+
+
+
+                        <li class="has-submenu">
+                            <a href="javascript:void(0)"><i class="mdi mdi-login"></i>Logout</a>
+                            <ul class="submenu megamenu">
+
+                                <li>
+                                    <a class="dropdown-item" href="" id="logout"><i
+                                            class="mdi mdi-logout m-r-5  "></i> Logout</a>
+                                </li>
+
+                            </ul>
+                        </li>
+                    </ul>
+
+
+                    <!-- End navigation menu -->
+                </div> <!-- end #navigation -->
+            </div> <!-- end container -->
+        </div> <!-- end navbar-custom -->
+    </header>
+    <!-- End Navigation Bar-->
+
+
+    <div class="wrapper">
+
+        <div class="container-fluid">
+            <!-- Page-Title -->
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="page-title-box">
+                        <h4 class="page-title text-center">Welcome to Vehicle Taxs service</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+
+                            <h4 class="mt-0 " style=" font-size: 18px; margin-left: 20px;">Pay a tax</h4><hr>
+                            
+                            <form class="" action="#" id="form">
+                                <div class="row grid-col">
+                                        <div class="col-sm-8"  style="margin: 5px;">
+                                            <div class="form-group mb-0">
+                                                <label class="mb-2 pb-1">First Name</label>
+                                                <input class="form-control" type="text" required
+                                                    placeholder="please enter client First Name..."
+                                                    id="nom">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-8"  style="margin: 5px;">
+                                            <div class="form-group mb-0">
+                                                <label class="mb-2 pb-1">Last Name</label>
+                                                <input class="form-control" type="text" required
+                                                    placeholder="please enter client last name..."
+                                                    id="prenom">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-8"  style="margin: 5px;">
+                                            <div class="form-group mb-0">
+                                                <label class="mb-2 pb-1">Matricule</label>
+                                                <input type="text" class="form-control" required
+                                                    placeholder="Please enter the client vehicle's card number..."
+                                                    id="matricule" />
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12"  style="margin: 5px;">
+                                            <div class="form-group mb-0">
+                                                <label class="mb-2 pb-1">Vehicule Type</label>
+                                                <div class="radio-tile-group" id="vehicule">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-8"  style="margin: 5px;">
+                                            <div class="form-group mb-0">
+                                                <label class="mb-2 pb-1">Amount</label>
+                                                <input class="form-control" type="number" required
+                                                    placeholder="Please enter the amount..."
+                                                    id="amount">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-8"  style="margin: 5px;">
+                                            <div class="form-group mb-0">
+                                                <label class="mb-2 pb-1">Cash</label>
+                                                <input class="form-control" type="number" required
+                                                    placeholder="How much do you have..."
+                                                    id="cash">
+                                            </div>
+                                        </div>
+                                      
+                                        
+                                        <div class="col-sm-12">
+                                            <div class="col-sm-12"  style="margin: 20px;">
+                                                <button type="submit" class="btn  btn-success waves-effect waves-light"
+                                                    id="submit">Submit</button>
+                                            </div>
+                                        </div>
+
+                                </div>
+
+                            </form>
+
+
+
+                        </div>
+                    </div>
+                </div> <!-- end col -->
+            </div> <!-- end row -->
+            <!-- end page title end breadcrumb -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body table-responsive">
+                            <h5 class="mt-0 " style=" font-size: 18px; margin-left: 20px;">Vehicle Taxs operations</h5><hr>
+                            <div class="">
+                                <table id="datatable2" class="table text-center">
+                                    <thead style="background-color: #158572f3; color: white;">
+                                        <tr>
+                                            <th>Client name</th>
+                                            <th>Matricule</th>
+                                            <th>Amount</th>
+                                            <th>Vehicle Type</th>
+                                            <th>Operation</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- end col -->
+            </div>
+            
+            <div id="customers" style="display:none">
+                <table id="receipt" class="table table-striped">
+                    <thead>
+                        <tr class='warning'>
+                            <th>1</th>
+                            <th>2</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody id="body">
+    
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- end wrapper -->
+
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        © 2022 TASSHILAT 2ITE.
+                    </div>
+                    <div class="col-12 text-muted">
+                        Made by Msis, Bouyarmane, Amezzane.
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- End Footer -->
+
+        <!-- Alertify js -->
+        <script src="assets/plugins/alertify/js/alertify.js"></script>
+        <script src="assets/pages/alertify-init.js"></script>
+        <!-- Parsley js -->
+        <script type="text/javascript" src="assets/plugins/parsleyjs/parsley.min.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('form').parsley();
+            });
+        </script>
+
+
+
+        <!-- Sweet-Alert  -->
+        <script src="assets/plugins/sweet-alert2/sweetalert2.min.js"></script>
+        <script src="assets/pages/sweet-alert.init.js"></script>
+
+
+</body>
+
+</html>

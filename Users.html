@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <title>User Management</title>
+    <meta content="Admin Dashboard" name="description" />
+    <meta content="Mannatthemes" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <link rel="shortcut icon" href="images/ensajColors.png">
+
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/icons.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/css.css" rel="stylesheet" type="text/css">
+
+
+    <!-- DataTables -->
+    <link href="assets/plugins/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/plugins/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <!-- Responsive datatable examples -->
+    <link href="assets/plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <!-- jQuery  -->
+    <script src="assets/js/jquery.min.js"></script>
+    <!-- Required datatable js -->
+    <script src="assets/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="assets/plugins/datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/modernizr.min.js"></script>
+    <script src="assets/js/waves.js"></script>
+    <script src="assets/js/jquery.nicescroll.js"></script>
+
+    <!-- Sweet Alert -->
+    <link href="assets/plugins/sweet-alert2/sweetalert2.min.css" rel="stylesheet" type="text/css">
+
+    <!-- App js -->
+    <script src="assets/js/app.js"></script>
+
+    <script src="js/adminUsers.js"></script>
+
+    <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
+
+</head>
+
+
+<body>
+
+    <!-- Loader -->
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner"></div>
+        </div>
+    </div>
+    <div id="main_container">
+        <!-- Navigation Bar-->
+        <header id="topnav">
+            <!-- MENU Start -->
+            <div class="navbar-custom">
+                <div class="container-fluid">
+                    <div id="navigation">
+                        <!-- Navigation Menu-->
+                        <ul class="navigation-menu ">
+
+                            <li class="has-submenu ">
+                                <a href="dashboardAdmin"><i class="mdi mdi-view-dashboard"></i>Dashboard</a>
+                            </li>
+
+
+
+                            <li class="has-submenu">
+                                <a href="javascript:void(0)"><i class="mdi mdi-login"></i>Users</a>
+                                <ul class="submenu megamenu">
+
+                                    <li>
+                                        <a class="dropdown-item" href="javascript:void(0)" ><i
+                                                class="mdi mdi-account-multiple m-r-5  "></i>User managment </a>
+                                    </li><br>
+                                    <li>
+                                        <a class="dropdown-item" href=" pointing" ><i
+                                                class="mdi mdi-timetable m-r-5  "></i> Pointing managment</a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li class="has-submenu">
+                                <a href="#"><i class="mdi mdi-airplane"></i>Airplane Ticket</a>
+                                <ul class="submenu megamenu">
+                                    <li>
+                                        <ul>
+                                            <li><a href="BAA">Get a ticket</a></li>
+    
+                                        </ul>
+                                    </li>
+    
+                                </ul>
+                            </li>
+    
+                            <li class="has-submenu">
+                                <a href="#"><i class="mdi mdi-lightbulb"></i>Electricity</a>
+                                <ul class="submenu megamenu">
+                                    <li>
+                                        <ul>
+                                            <li><a href="EA">Pay electricity bill</a></li>
+    
+                                        </ul>
+                                    </li>
+    
+                                </ul>
+                            </li>
+    
+                            <li class="has-submenu">
+                                <a href="#"><i class="mdi mdi-car"></i>Vehicle Taxs</a>
+                                <ul class="submenu megamenu">
+                                    <li>
+                                        <ul>
+                                            <li><a href="TVAA">Pay a tax</a></li>
+    
+                                        </ul>
+                                    </li>
+    
+                                </ul>
+                            </li>
+
+
+                            <li class="has-submenu">
+                                <a href="javascript:void(0)"><i class="mdi mdi-login"></i>Logout</a>
+                                <ul class="submenu megamenu">
+
+                                    <li>
+                                        <a class="dropdown-item" href="" id="logout"><i
+                                                class="mdi mdi-logout m-r-5  "></i> Logout</a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                        </ul>
+
+
+                        <!-- End navigation menu -->
+                    </div> <!-- end #navigation -->
+                </div> <!-- end container -->
+            </div> <!-- end navbar-custom -->
+        </header>
+        <!-- End Navigation Bar-->
+
+
+        <div class="wrapper">
+
+            <div class="container-fluid">
+                <!-- Page-Title -->
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="page-title-box">
+                            <h4 class="page-title text-center">Users managment</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="row text">
+                    <div class="col-12 ">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="mt-0 text-center" style=" font-size: 18px;">Add a new user</h4>
+                                <hr>
+                                <form class="" action="#" id="form">
+                                    <h4 class="mt-0 header-title" style="margin-left: 30px; ">Personal informations</h4>
+                                    
+                                        <div class="col-sm-8" style="margin: 20px;">
+                                            <span id="id" style="display: none;"></span>
+                                            <span id="password" style="display: none;"></span>
+                                            <div class="form-group mb-0">
+                                                <label class="mb-2 pb-1">First Name</label>
+                                                <input type="text" class="form-control" required
+                                                    placeholder="please enter the user's first name..."
+                                                    id="first_name" />
+                                            </div>
+                                        </div>
+                
+
+                                        <div class="col-sm-8" style="margin: 20px;">
+                                            <div class="form-group mb-0">
+                                                <label class="mb-2 pb-1">Last Name</label>
+                                                <input type="text" class="form-control" required
+                                                    placeholder="please enter the user's first name..."
+                                                    id="last_name" />
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-8" style="margin: 20px;">
+                                            <div class="form-group mb-0">
+                                                <label class="mb-2 pb-1">Birthday</label>
+                                                <input type="date" class="form-control" required
+                                                    placeholder="please enter the user's first name..." id="date" />
+                                            </div>
+                                        </div>
+
+                                    
+                                        <div class="col-sm-8" style="margin: 20px;">
+                                            <div class="form-group mb-0">
+                                                <label class="mb-2 pb-1">Gender</label>
+                                                <br>
+                                                <div class="form-check-inline my-1">
+                                                    <div class="custom-control custom-radio">
+                                                        <input type="radio" id="customRadio4" name="gender" value="male"
+                                                            class="custom-control-input">
+                                                        <label class="custom-control-label"
+                                                            for="customRadio4">Male</label>
+                                                    </div>
+                                                </div>
+                                                <div class="form-check-inline my-1">
+                                                    <div class="custom-control custom-radio">
+                                                        <input type="radio" id="customRadio5" name="gender"
+                                                            value="female" class="custom-control-input">
+                                                        <label class="custom-control-label"
+                                                            for="customRadio5">Female</label>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <h4 class="mt-0 header-title" style="margin-left: 30px; ">User informations</h4>
+
+                                        <div class="col-sm-8" style="margin: 20px;">
+                                            <div class="form-group mb-0">
+                                                <label class="mb-2 pb-1">Email</label>
+                                                <input type="text" class="form-control" required
+                                                    placeholder="please enter the user's Email..." id="email" />
+                                            </div>
+                                        </div>
+
+                                        
+                                        <div class="col-sm-2" style="margin: 20px;">
+                                            <button type="submit" class="btn btn-success waves-effect waves-light"
+                                                id="submit">Submit</button>
+                                        </div>
+                                  
+                                </form>
+                            </div>
+                        </div>
+                    </div> <!-- end col -->
+                </div> <!-- end row -->
+                <!-- end page title end breadcrumb -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body table-responsive">
+                                <h5 class="mt-0 text-center" style=" font-size: 18px;">Users Informations</h5><hr>
+                                <div class="">
+                                    <table id="datatable2" class="table text-center">
+                                        <thead style="background-color: #158572f3; color: white;">
+                                            <tr>
+                                                <th>First Name</th>
+                                                <th>Last Name</th>
+                                                <th>Email</th>
+                                                <th>Gender</th>
+                                                <th>Birthday</th>
+                                                <th>Operation</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- end col -->
+                </div>
+            </div>
+            <!-- end wrapper -->
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        © 2022 TASSHILAT 2ITE.
+                    </div>
+                    <div class="col-12 text-muted">
+                        Made by Msis, Bouyarmane, Amezzane.
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- End Footer -->
+    </div>
+
+    <!-- Alertify js -->
+    <script src="assets/plugins/alertify/js/alertify.js"></script>
+    <script src="assets/pages/alertify-init.js"></script>
+    <!-- Parsley js -->
+    <script type="text/javascript" src="assets/plugins/parsleyjs/parsley.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('form').parsley();
+        });
+    </script>
+
+
+    <!-- Sweet-Alert  -->
+    <script src="assets/plugins/sweet-alert2/sweetalert2.min.js"></script>
+    <script src="assets/pages/sweet-alert.init.js"></script>
+    <style>
+        .blur {
+            filter: blur(20px);
+            -webkit-filter: blur(20px);
+            -moz-filter: blur(20px);
+            -o-filter: blur(20px);
+            -ms-filter: blur(20px);
+        }
+    </style>
+</body>
+
+</html>

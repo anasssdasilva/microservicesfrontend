@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <title>Admin Dashboard</title>
+    <meta content="Admin Dashboard" name="description" />
+    <meta content="Mannatthemes" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <link rel="shortcut icon" href="images/ensajColors.png">
+
+    <!-- jvectormap -->
+    <link href="assets/plugins/jvectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet">
+    <link href="assets/plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+
+
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/icons.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/css.css" rel="stylesheet" type="text/css">
+
+
+    <!-- jQuery  -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/modernizr.min.js"></script>
+    <script src="assets/js/waves.js"></script>
+    <script src="assets/js/jquery.nicescroll.js"></script>
+
+    <script src="assets/plugins/jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
+    <script src="assets/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+
+    <script src="assets/plugins/skycons/skycons.min.js"></script>
+    <script src="assets/plugins/raphael/raphael-min.js"></script>
+
+    <script src="assets/pages/dashborad.js"></script>
+    <script src="assets/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="assets/plugins/datatables/dataTables.bootstrap4.min.js"></script>
+    
+    <link href="assets/plugins/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/plugins/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- App js -->
+    <script src="assets/js/app.js"></script>
+
+    <script src="js/dashboardAdmin.js"></script>
+    <link rel="stylesheet" href="css/phonetopup.css" type="text/css" />
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"
+        integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw=="
+        crossorigin="anonymous"></script>
+
+    <!-- Sweet Alert -->
+    <link href="assets/plugins/sweet-alert2/sweetalert2.min.css" rel="stylesheet" type="text/css">
+    <!-- Sweet-Alert  -->
+    <script src="assets/plugins/sweet-alert2/sweetalert2.min.js"></script>
+    <script src="assets/pages/sweet-alert.init.js"></script>
+</head>
+
+
+<body>
+
+    <!-- Loader -->
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner"></div>
+        </div>
+    </div>
+    <div id="main_container">
+        <!-- Navigation Bar-->
+        <header id="topnav">
+            <!-- MENU Start -->
+            <div class="navbar-custom">
+                <div class="container-fluid">
+                    <div id="navigation">
+                        <!-- Navigation Menu-->
+                        <ul class="navigation-menu ">
+
+                            <li class="has-submenu ">
+                                <a href="javascript:void(0)"><i class="mdi mdi-view-dashboard"></i>Dashboard</a>
+                            </li>
+
+
+
+                            <li class="has-submenu">
+                                <a href="javascript:void(0)"><i class="mdi mdi-account"></i>Users</a>
+                                <ul class="submenu megamenu">
+
+                                    <li>
+                                        <a class="dropdown-item" href="Users" ><i
+                                                class="mdi mdi-account-multiple m-r-5  "></i>User managment </a>
+                                    </li><br>
+                                    <li>
+                                        <a class="dropdown-item" href=" pointing" ><i
+                                                class="mdi mdi-timetable m-r-5  "></i> Pointing managment</a>
+                                    </li>
+
+                                </ul>
+                            </li>
+
+                            <li class="has-submenu">
+                                <a href="#"><i class="mdi mdi-airplane"></i>Airplane Ticket</a>
+                                <ul class="submenu megamenu">
+                                    <li>
+                                        <ul>
+                                            <li><a href="BAA">Get a ticket</a></li>
+    
+                                        </ul>
+                                    </li>
+    
+                                </ul>
+                            </li>
+    
+                            <li class="has-submenu">
+                                <a href="#"><i class="mdi mdi-lightbulb"></i>Electricity</a>
+                                <ul class="submenu megamenu">
+                                    <li>
+                                        <ul>
+                                            <li><a href="EA">Pay electricity bill</a></li>
+    
+                                        </ul>
+                                    </li>
+    
+                                </ul>
+                            </li>
+    
+                            <li class="has-submenu">
+                                <a href="#"><i class="mdi mdi-car"></i>Vehicle Taxs</a>
+                                <ul class="submenu megamenu">
+                                    <li>
+                                        <ul>
+                                            <li><a href="TVAA">Pay a tax</a></li>
+    
+                                        </ul>
+                                    </li>
+    
+                                </ul>
+                            </li>
+
+                            <li class="has-submenu">
+                                <a href="javascript:void(0)"><i class="mdi mdi-login"></i>Logout</a>
+                                <ul class="submenu megamenu">
+
+                                    <li>
+                                        <a class="dropdown-item" href="" id="logout"><i
+                                                class="mdi mdi-logout m-r-5  "></i> Logout</a>
+                                    </li>
+
+                                </ul>
+                            </li>
+
+
+                        </ul>
+
+                        <!-- End navigation menu -->
+                    </div> <!-- end #navigation -->
+                </div> <!-- end container -->
+            </div> <!-- end navbar-custom -->
+        </header>
+        <!-- End Navigation Bar-->
+
+
+        <div class="wrapper">
+            <div class="container-fluid">
+                <!-- Page-Title -->
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="page-title-box">
+                            <h4 class="page-title text-center">Welcome to Admin Tashilat 2ITE</h4>
+                        </div>
+                    </div>
+                </div>
+                <!-- end page title end breadcrumb -->
+
+                <div class="row">
+                    <div class=" row col-sm-12">
+                        <div class="col-sm-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="search-type-arrow"></div>
+                                    <div class="d-flex flex-row">
+                                        
+                                        <div class="col-9 align-self-center text-right">
+                                            <div class="m-l-10 ">
+                                                <h5 class="mt-0 text-center" id="agent">0</h5>
+                                                <p class="mb-0 text-center">Number of Users</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-3 align-self-center">
+                                            <div class="round bg-dark">
+                                                <i class="fas fa-users text-white"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!--end card-body-->
+                            </div>
+                            <!--end card-->
+                        </div>
+                        <!--end col-->
+                        <div class="col-sm-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="search-type-arrow"></div>
+                                    <div class="d-flex flex-row">
+                                        
+                                        <div class="col-9 align-self-center text-right">
+                                            <div class="m-l-10 ">
+                                                <h5 class="mt-0 text-center" id="counter">0</h5>
+                                                <p class="mb-0 text-center">Number of Connections</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-3 align-self-center">
+                                            <div class="round bg-dark">
+                                                <i class="fa fa-sign-in-alt
+                                                text-white"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!--end card-body-->
+                            </div>
+                            <!--end card-->
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex flex-row">
+                                        
+                                        <div class="col-9 align-self-center text-right">
+                                            <div class="m-l-10">
+                                                <h5 class="mt-0 text-center" id="phone">0</h5>
+                                                <p class="mb-0 text-center">Paid airplane tickets </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-3 align-self-center">
+                                            <div class="round " style="background-color: #158572;">
+                                                <i class="mdi mdi-airplane text-white"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!--end card-body-->
+                            </div>
+                            <!--end card-->
+                        </div>
+                        <!--end col-->
+
+                        <div class="col-sm-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="search-type-arrow"></div>
+                                    <div class="d-flex flex-row">
+                                        
+                                        <div class="col-9 align-self-center text-right">
+                                            <div class="m-l-10 ">
+                                                <h5 class="mt-0 text-center" id="transfer">0</h5>
+                                                <p class="mb-0 text-center">Paid vehicle taxs</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-3 align-self-center">
+                                            <div class="round " style="background-color: #fd6ab4;">
+                                                <i class="mdi mdi-car text-white"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!--end card-body-->
+                            </div>
+                            <!--end card-->
+                        </div>
+                        <!--end col-->
+                        <div class="col-sm-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex flex-row">
+                                        
+                                        <div class="col-9 text-right align-self-center">
+                                            <div class="m-l-10 ">
+                                                <h5 class="mt-0 text-center" id="water">0</h5>
+                                                <p class="mb-0 text-center">Paid electricity bill</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-3 align-self-center">
+                                            <div class="round bg-light">
+                                                <i class="mdi mdi-lightbulb text-white"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!--end card-body-->
+                            </div>
+                            <!--end card-->
+                        </div>
+                        <!--end col-->
+                        
+                       
+                    
+
+                    </div>
+
+                </div>
+                <div class="row" style="margin-top: 30px;">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body table-responsive">
+                                <h5 class="mt-0 text-center" style=" font-size: 18px; margin-left: 20px;">Total Money earned by User</h5><hr>
+                                <div class="">
+                                    <table id="datatable11" class="table text-center">
+                                        <thead style="background-color: #158572f3; color: white;">
+                                            <tr>
+                                                <th>User's ID</th>
+                                                <th>User's full name</th>
+                                                <th>Total money (DH)</th>
+    
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+    
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- end col -->
+                </div>
+                <div class="row" style="margin-top: 30px; margin-bottom: 30px;">
+                    <div class=" row col-sm-12">
+                        <div class="col-sm-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h6 class="mt-0 text-center" style=" font-size: 18px; margin-left: 20px;">Number of operations done by every user</h6><hr>
+                                    <canvas height="120px" id="mainChart"></canvas>
+                                </div>
+
+                                <!--end card-->
+                            </div>
+                            <!--end card-->
+                        </div>
+                    </div>
+                    
+
+                </div>
+                
+               
+
+            </div> <!-- end container -->
+        </div>
+        <!-- end wrapper -->
+
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        © 2022 TASSHILAT 2ITE.
+                    </div>
+                    <div class="col-12 text-muted">
+                        Made by Msis, Bouyarmane, Amezzane.
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- End Footer -->
+    </div>
+    <style>
+        .blur {
+            filter: blur(20px);
+            -webkit-filter: blur(20px);
+            -moz-filter: blur(20px);
+            -o-filter: blur(20px);
+            -ms-filter: blur(20px);
+        }
+    </style>
+
+
+</body>
+
+</html>

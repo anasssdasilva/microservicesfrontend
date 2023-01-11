@@ -1,0 +1,72 @@
+#topnav{
+background-color: rgb(21, 133, 114);
+}
+#navigation{
+    background-color: #158572;
+}
+
+#topnav .navbar-custom {
+    background-color: rgb(21, 133, 114);
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    padding-left: 0;
+  }
+  #topnav .navigation-menu > li > a i {
+    display: inline-block;
+    font-size: 18px;
+    line-height: 25px;
+    margin-left: 3px;
+    margin-right: 10px;
+    text-align: center;
+    vertical-align: middle;
+    width: 25px;
+    height: 25px;
+    background-color: rgb(21, 133, 114);
+    border-radius: 3px;
+  }
+  .round {
+    line-height: 60px;
+    color: #242c6d;
+    width: 60px;
+    height: 60px;
+    font-size: 26px;
+    display: inline-block;
+    font-weight: 400;
+    border: 1px solid #f8f9fa;
+    text-align: center;
+    border-radius: 100%;
+    background: rgba(36, 44, 109, 0.02);
+  }
+  .bg-primary {
+    background-color: #3fcccc !important;
+  }
+  .bg-light {
+    background-color: #f1e96d !important;
+  }
+ 
+  .accountbg {
+    background: url("../images/back.png");
+    background-size: 1360px 600px;
+    background-repeat: no-repeat;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+  .text-light {
+    color: #158572 !important;
+  }
+  .btn-danger{
+    background-color: rgb(236, 24, 87);
+  }
+  .text-danger{
+    color:rgb(236, 24, 87);
+  }
+  
+  .card{
+    border-radius: 60px 0px;
+    box-shadow: -10px 5px 5px rgb(115, 129, 129);
+    margin-bottom: 10px;
+  }
+  .footer{
+    margin-top: 30 px;
+  }
